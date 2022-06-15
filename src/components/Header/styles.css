@@ -1,0 +1,25 @@
+header {
+  background-color: var(--wet-asphalt);
+
+  align-items: center;
+  display: flex;
+
+  padding: 16px;
+}
+
+header hgroup {
+  text-align: center;
+  margin-right: 48px;
+}
+
+header hgroup h1 {
+  font-family: 'Raleway';
+  font-size: 350%;
+  font-weight: 800;
+  font-style: italic;
+}
+
+header hgroup h2 {
+  font-size: 100%;
+  font-weight: 600;
+}

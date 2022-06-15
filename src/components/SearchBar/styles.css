@@ -1,0 +1,40 @@
+#search-bar {
+  align-self: flex-end;
+  align-items: center;
+  display: flex;
+
+  background-color: white;
+  border-radius: 32px;
+
+  padding: 8px 16px;
+}
+
+#search-bar #search-icon {
+  width:  24px;
+  height: 24px;
+
+  fill: var(--soothing-breeze);
+
+  margin-right: 16px;
+}
+
+#search-bar input {
+  border: none;
+  outline: none;
+
+  color: var(--dracula-orchid);
+  font-size: 125%;
+}
+
+/* https://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete */
+#search-bar input:-webkit-autofill,
+#search-bar input:-webkit-autofill:hover, 
+#search-bar input:-webkit-autofill:focus, 
+#search-bar input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  -webkit-text-fill-color: var(--dracula-orchid) !important;
+}
+
+#search-bar input::placeholder {
+  color: var(--soothing-breeze);
+}
