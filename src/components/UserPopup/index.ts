@@ -1,6 +1,6 @@
 import './styles.css';
 
-import { getUser } from './../../utils/auth_utils';
+import { getUser, resizeUserPhoto } from './../../utils/auth_utils';
 import $ from './../../utils/$';
 
 const loadAlternativePhoto = (photoURL: string) => {
@@ -18,26 +18,41 @@ const loadAlternativePhoto = (photoURL: string) => {
   }  
 }
 
-const setUserPopup = () => {
-  const app = <HTMLDivElement>$('#app');
-  const userPopup = <HTMLDivElement>$('#user-popup');
-
-  app.onclick = (event: MouseEvent) => {
-    const { id } = <HTMLDivElement>event.target;
-    
-    if (id !== 'user-popup') {
-      userPopup.style.display = 'none';
-    }
-
-    if (id === 'header-user-photo') {
-      userPopup.style.display = 'flex';
-    }
-  }
-}
-
 const renderCheck = (emailVerified: boolean) => {
   const checkIcon = <SVGAElement>$('#check-icon');
   checkIcon.style.display = emailVerified ? 'block' : 'none';
+}
+
+const showUserPopup = () => {
+  const userPopup = <HTMLDivElement>$('#user-popup');
+  userPopup.style.display = 'flex';
+}
+
+const hideUserPopup = () => {
+  const userPopup = <HTMLDivElement>$('#user-popup');
+  userPopup.style.display = 'none';
+}
+
+const setUserPopup = () => {
+  const app = <HTMLDivElement>$('#app');
+
+  onblur = (_) => {
+    // TODO descomentar
+    // hideUserPopup();
+  };
+
+  app.onclick = (event: MouseEvent) => {
+    const ids = event.composedPath().map((value: EventTarget) => (<HTMLElement>value).id);
+    
+    if (ids.includes('header-user-photo')) {
+      showUserPopup();
+      return;
+
+    } else if (!ids.includes('user-popup')) {
+      hideUserPopup();
+      return;
+    }
+  }
 }
 
 const renderUserPopup = (container: HTMLDivElement) => {
@@ -47,10 +62,10 @@ const renderUserPopup = (container: HTMLDivElement) => {
 
   const htmlContent = `
     <div id="user-popup-area">
-      <img id="header-user-photo" src="${photoURL}" alt="Foto de perfil de ${displayName}" />
+      <img id="header-user-photo" src="${resizeUserPhoto(photoURL, 128)}" alt="Foto de perfil de ${displayName}" />
 
       <div id="user-popup">
-        <img src="${photoURL}" alt="Foto de perfil de ${displayName}" />
+        <img src="${resizeUserPhoto(photoURL, 192)}" alt="Foto de perfil de ${displayName}" />
 
         <span id="display-name">${displayName}</span>
 
@@ -61,10 +76,15 @@ const renderUserPopup = (container: HTMLDivElement) => {
 
         <hr />
         
-        <div id="phone-number">
-          <svg id="phone-number-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z"/></svg>
+        <div class="data">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z"/></svg>
           <span>${phoneNumber ?? 'Indisponível'}</span>
         </div>
+
+        <a class="data" id="favourites-anchor" href="favourites.html">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"/></svg>
+          <span>Meus favoritos</span>
+        </a>
 
         <hr />
 

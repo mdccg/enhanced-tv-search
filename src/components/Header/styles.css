@@ -1,25 +1,82 @@
 header {
-  background-color: var(--wet-asphalt);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(30, 39, 46, 1) 0%,
+      rgba(30, 39, 46, 0.7) 50%,
+      rgba(30, 39, 46, 0.5) 70%,
+      rgba(30, 39, 46, 0) 100%
+    );
 
   align-items: center;
   display: flex;
-
+  
+  box-sizing: border-box;
   padding: 16px;
+  width: 100%;
+  
+  position: fixed;
+  z-index: 2;
 }
 
 header hgroup {
   text-align: center;
   margin-right: 48px;
+
+  max-width: 75vw;
+}
+
+header hgroup a {
+  text-decoration: none;
+  color: inherit;
 }
 
 header hgroup h1 {
   font-family: 'Raleway';
+  color: white;
   font-size: 350%;
   font-weight: 800;
   font-style: italic;
 }
 
 header hgroup h2 {
+  color: white;
   font-size: 100%;
   font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  header hgroup {
+    margin-right: 0;
+    
+    line-height: 1.5;
+    text-align: left;
+
+    margin-bottom: 16px;
+  }
+
+  header hgroup h1 {
+    font-size: 200%;
+  }
+
+  header #search-bar {
+    margin-bottom: 4px;
+  }
+
+  header hgroup, 
+  header #search-bar {
+    align-self: flex-start;
+  }
+
+  header #user-popup-area {
+    margin-left: 0;
+
+    position: absolute;
+    right: 8px;
+    top:   8px;
+  }
 }

@@ -1,5 +1,7 @@
+import api from './../services/api';
+
 type TVShow = {
-  id: number;
+  id: string;
   name: string;
   type: string;
   language: string;
@@ -7,10 +9,24 @@ type TVShow = {
   isRunning: boolean;
   premieredDate?: Date;
   imageUrl?: string;
+  thumbnailUrl?: string;
   channel: string;
 };
 
-export const getTvShow = (jsonObject: any): TVShow => {
+export const getTVShowById = async (id: string): Promise<TVShow | null> => {
+  try {
+    const response = await api.get(`/shows/${id}`);
+    const tvShow = parseTVShow(response.data);
+    return tvShow;
+
+  } catch(error) {
+    console.error(error);
+  }
+
+  return null;
+}
+
+export const parseTVShow = (jsonObject: any): TVShow => {
   const { id, name, type, language, genres, status, premiered, network, webChannel, image } = jsonObject;
 
   let premieredDate;
@@ -31,6 +47,7 @@ export const getTvShow = (jsonObject: any): TVShow => {
 
   if (image) {
     tvShow.imageUrl = image.original;
+    tvShow.thumbnailUrl = image.medium;
   }
 
   return tvShow;

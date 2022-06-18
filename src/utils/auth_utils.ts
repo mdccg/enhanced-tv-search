@@ -5,3 +5,6 @@ export const getUser = (): UserCredential['user'] => {
   const jsonUser = JSON.parse(`${stringUser}`);
   return <UserCredential['user']>jsonUser;
 }
+
+export const resizeUserPhoto = (photoURL: string | null, size: number) => 
+  `${photoURL}`.replace('s96', 's' + size);

@@ -27,8 +27,10 @@
   right: 16px;
   top: 24px;
   
+  box-shadow: var(--smooth-shadow);
   box-sizing: border-box;
   min-width: 256px;
+  max-width: 100%;
   padding: 12px;
 
   background-color: white;
@@ -36,9 +38,11 @@
 
   flex-direction: column;
   align-items: center;
-  display: flex;
+  display: none;
 
   text-align: center;
+
+  z-index: 2;
 }
 
 #user-popup span {
@@ -67,6 +71,9 @@
 #user-popup #email span {
   font-size: 82.5%;
   font-weight: 400;
+  
+  word-break: break-all;
+  max-width: 256px;
 }
 
 #user-popup #email #check-icon {
@@ -82,23 +89,37 @@
 #user-popup hr {
   margin: 16px 0;
 
-  border-top: 1px solid var(--city-lights);
+  border: 1px solid var(--city-lights);
 
   width: 100%;
 }
 
-#user-popup #phone-number {
+#user-popup .data {
   align-self: flex-start;
+  align-items: center;
+  display: flex;
+  
   margin: 0 4px;
 }
 
-#user-popup #phone-number #phone-number-icon {
+#user-popup .data svg {
   width:  16px;
   height: 16px;
 
   fill: var(--dracula-orchid);
 
   margin-right: 12px;
+}
+
+#user-popup #favourites-anchor {
+  margin-top: 12px;
+
+  text-decoration: none;
+  color: inherit;
+}
+
+#user-popup #favourites-anchor span {
+  font-weight: 700;
 }
 
 #user-popup #logout-link {
@@ -110,4 +131,10 @@
   padding: 8px 16px;
   
   color: var(--american-river);
+}
+
+@media only screen and (max-width: 768px) {
+  #user-popup #email span {
+    font-size: 75%;
+  }
 }

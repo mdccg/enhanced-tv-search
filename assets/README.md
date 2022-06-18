@@ -17,11 +17,23 @@
 - [Brand, brands, logo, logos, microsoft, windows icon - Free download](https://www.iconfinder.com/icons/2993661/brand_brands_logo_logos_microsoft_windows_icon)
 - [Badge, check icon - Free download on Iconfinder](https://www.iconfinder.com/icons/7122502/badge_check_icon)
 - [Profle, person, profile, user icon - Free download](https://www.iconfinder.com/icons/1055000/profle_person_profile_user_icon)
+- [Crying, emoji, sad icon - Free download on Iconfinder](https://www.iconfinder.com/icons/4830812/crying_emoji_sad_icon)
 
 - [Magnifying glass - solid | Font Awesome](https://fontawesome.com/icons/magnifying-glass?s=solid)
 - [Phone - solid | Font Awesome](https://fontawesome.com/icons/phone?s=solid)
+- [Star - solid | Font Awesome](https://fontawesome.com/icons/star?s=regular)
 
 ## Fontes tipográficas
 
 - [Raleway - Google Fonts](https://fonts.google.com/specimen/Raleway)
 - [Assistant - Google Fonts](https://fonts.google.com/specimen/Assistant)
+
+## Efeitos sonoros
+
+- [Notification Sound Effects (Copyright Free) - YouTube](https://www.youtube.com/watch?v=bOJ8eR5ee0s)
+- [(1) 8-Bit Coin Sound Effect (Copyright Free) - YouTube](https://www.youtube.com/watch?v=5v20ztxGvQ0)
+
+## Miscelâneas
+
+- [CSS Gradient — Generator, Maker, and Background](https://cssgradient.io/)
+- [loading.io - Your SVG + GIF + PNG Ajax Loading Icons and Animation Generator](https://loading.io/)

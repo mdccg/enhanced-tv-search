@@ -1,0 +1,26 @@
+#tv-show {
+  margin: 64px;
+
+  align-items: flex-start;
+  display: flex;
+}
+
+#tv-show #tv-show-banner {
+  box-shadow: var(--smooth-shadow);
+  border-radius: 16px;
+  width: 256px;
+}
+
+#tv-show #tv-show-details {
+  margin-left: 48px;
+}
+
+#tv-show #tv-show-details * {
+  color: white;
+}
+
+#tv-show #tv-show-details #name {
+  font-family: 'Raleway';
+  font-size: 200%;
+  font-weight: 700;
+}

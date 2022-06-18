@@ -1,4 +1,3 @@
-import renderHeader from './components/Header';
 import renderHomePage from './pages/Home';
 import $ from './utils/$';
 
@@ -9,9 +8,4 @@ if (!token) {
 }
 
 const app = <HTMLDivElement>$('#app');
-
 renderHomePage(app);
-
-const home = <HTMLDivElement>$('#home');
-
-renderHeader(home);

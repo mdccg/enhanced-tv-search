@@ -1,0 +1,32 @@
+{
+  "types": {
+    "Animation": "Animação",
+    "Documentary": "Documentário",
+    "News": "Notícias",
+    "Reality": "Reality show",
+    "Panel show": "Jogo de painel",
+    "Scripted": "Roteirizado",
+    "Sports": "Esportes",
+    "Variety": "Aleatório"
+  },
+  "genres": {
+    "Action": "Ação",
+    "Adventure": "Aventura",
+    "Children": "Infantil",
+    "Comedy": "Comédia",
+    "Espionage": "Espionagem",
+    "Family": "Família",
+    "Fantasy": "Fantasia",
+    "Food": "Comida",
+    "History": "História",
+    "Music": "Música",
+    "Mystery": "Mistério",
+    "Nature": "Natureza",
+    "Science-Fiction": "Ficção científica",
+    "Sports": "Esportes",
+    "Supernatural": "Sobrenatural",
+    "Travel": "Viagem",
+    "Thriller": "Suspense",
+    "Western": "Ocidente"
+  }
+}

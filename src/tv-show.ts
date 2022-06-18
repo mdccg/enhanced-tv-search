@@ -1,4 +1,4 @@
-import renderFavouritesPage from './pages/Favourites';
+import renderTVShowDetails from './pages/TVShowDetails';
 import $ from './utils/$';
 
 const token = localStorage.getItem('token');
@@ -8,4 +8,4 @@ if (!token) {
 }
 
 const app = <HTMLDivElement>$('#app');
-renderFavouritesPage(app);
+renderTVShowDetails(app);

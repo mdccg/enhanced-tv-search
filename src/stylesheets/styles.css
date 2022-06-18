@@ -2,7 +2,7 @@
 @import url('./palette.css');
 
 :root {
-  --smooth-shadow: box-shadow:
+  --smooth-shadow: 
     2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
     6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
     12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
@@ -27,5 +27,62 @@ html, body, #app, .page {
 }
 
 body {
-  background-color: var(--imperial-primer);
+  background-color: var(--black-pearl);
+}
+
+b {
+  font-weight: 600;
+}
+
+i {
+  color: inherit;
+}
+
+.showup-panel {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  flex: 1;
+  
+  opacity: .825;
+
+  user-select: none;
+}
+
+.showup-panel img {
+  width:  128px;
+  height: 128px;
+}
+
+.showup-panel span {
+  font-family: 'Raleway';
+  color: white;
+  font-size: 150%;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+
+  width: 82.5%;
+}
+
+#searched-videos-area {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  display: none;
+
+  margin: 0 64px 32px;
+}
+
+@media only screen and (max-width: 768px) {
+  .showup-panel span {
+    font-size: 125%;
+  } 
+
+  #searched-videos-area {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 0;
+    flex: 1;
+  }
 }

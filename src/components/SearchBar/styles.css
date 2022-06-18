@@ -19,8 +19,9 @@
 }
 
 #search-bar input {
-  border: none;
   outline: none;
+  border: none;
+  width: 100%;
 
   color: var(--dracula-orchid);
   font-size: 125%;
