@@ -39,7 +39,7 @@ export const parseTVShow = (jsonObject: any): TVShow => {
   const isRunning = status === 'Running';
   const channel = network ? network.name : webChannel.name;
 
-  const tvShow: TVShow = { id, name, type, language, genres, isRunning, channel };
+  const tvShow: TVShow = { id: `${id}`, name, type, language, genres, isRunning, channel };
 
   if (premiered) {
     tvShow.premieredDate = premieredDate;

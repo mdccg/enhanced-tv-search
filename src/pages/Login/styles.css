@@ -38,10 +38,12 @@
 }
 
 #wallpaper {
-  background-image: url('/assets/images/wallpaper-1.png');
-  background-position: center;
+  background-image: url('/assets/images/wallpapers-sprite.png');
+  
+  background-position-x: 0;
+  background-position-y: 4608px;
 
-  transition: all 1s;
+  transition: background-position-y 1s cubic-bezier(0.215, 0.610, 0.355, 1);
   z-index: 1;
 }
 

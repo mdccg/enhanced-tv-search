@@ -1,26 +1,137 @@
 #tv-show {
-  margin: 64px;
+  margin: 48px;
 
-  align-items: flex-start;
+  justify-content: flex-start;
   display: flex;
 }
 
 #tv-show #tv-show-banner {
+  align-items: flex-start;
+  display: flex;
+}
+
+#tv-show #tv-show-banner #back-button {
+  background-color: inherit;
+  outline: none;
+  border: none;
+
+  width:  64px;
+  height: 64px;
+
+  margin-right: 32px;
+
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  cursor: pointer;
+}
+
+#tv-show #tv-show-banner #back-button img {
+  width:  40px;
+  height: 40px;
+
+  filter: invert(1);
+}
+
+#tv-show #tv-show-banner > img,
+#tv-show #tv-show-banner .image-not-found {
   box-shadow: var(--smooth-shadow);
+
   border-radius: 16px;
+  max-width: 100%;
+  height: 100%;
   width: 256px;
+
+  object-fit: cover;
 }
 
 #tv-show #tv-show-details {
   margin-left: 48px;
+
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
 }
 
 #tv-show #tv-show-details * {
+  font-family: 'Raleway';
   color: white;
+  font-size: 112.5%;
+
+  line-height: 1.15;
 }
 
 #tv-show #tv-show-details #name {
-  font-family: 'Raleway';
-  font-size: 200%;
-  font-weight: 700;
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+
+  margin-bottom: 16px;
+}
+
+#tv-show #tv-show-details #name span {
+  font-size: 175%;
+  font-weight: 800;
+
+  margin-right: 8px;
+}
+
+#tv-show #tv-show-details #name #favourite-icon {
+  width:  48px;
+  height: 48px;
+
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  cursor: pointer;
+  
+  fill: var(--sun-flower);
+}
+
+#tv-show #tv-show-details #name #favourite-icon svg {
+  width:  32px;
+  height: 32px;
+
+}
+
+#tv-show #tv-show-details .data {
+  align-items: center;
+  display: flex;
+
+  margin: 16px 0;
+}
+
+#tv-show #tv-show-details .data img {
+  width:  32px;
+  height: 32px;
+
+  filter: invert(1);
+
+  margin-right: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+  #tv-show {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 48px 0;
+  }
+
+  #tv-show #tv-show-banner {
+    flex-direction: column;
+  }
+
+  #tv-show #tv-show-banner #back-button {
+    margin: 24px 0 16px;
+  }
+
+  #tv-show #tv-show-details {
+    margin: 32px 24px 64px;
+  }
+
+  #tv-show #tv-show-details #name span {
+    font-size: 150%;
+  }
 }

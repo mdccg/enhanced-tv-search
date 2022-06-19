@@ -25,26 +25,6 @@ a.tv-show-card {
   background-color: var(--dracula-orchid);
 }
 
-.tv-show-card .image-not-found {
-  height: 284px;
-
-  border-top-left-radius:  16px;
-  border-top-right-radius: 16px;
-
-  background-color: var(--fuel-town);
-
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.tv-show-card .image-not-found .television-icon {
-  width:  96px;
-  height: 96px;
-
-  fill: white;
-}
-
 .tv-show-card img,
 .tv-show-details {
   width: 192px;

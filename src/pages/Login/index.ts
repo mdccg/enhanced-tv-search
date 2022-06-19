@@ -3,26 +3,24 @@ import './styles.css';
 import renderGoogleLoginButton from './../../components/GoogleLoginButton';
 import renderGithubLoginButton from './../../components/GithubLoginButton';
 import renderMicrosoftLoginButton from './../../components/MicrosoftLoginButton';
+
 import $ from './../../utils/$';
 
 const initializeCarousel = () => {
   const wallpaper = <HTMLDivElement>$('#wallpaper');
+  const wallpaperHeight = 768;
+  const spriteHeight = 4608;
+  const seconds = 3;
   
-  let counter = 2;
-  
-  const INTERVAL_IN_SECONDS = 3;
-  const PHOTOS_TOTAL = 6;
+  let counter = 1;
 
   setInterval(() => {
-    wallpaper.style.backgroundImage = `url('/assets/images/wallpaper-${counter}.png')`;
-  
-    ++counter;
-    
-    if (counter > PHOTOS_TOTAL) {
-      counter = 1;
-    }
+    wallpaper.style.backgroundPositionY = `
+      ${spriteHeight - (wallpaperHeight * counter)}px
+    `;
 
-  }, INTERVAL_IN_SECONDS * 1e3);
+    ++counter;
+  }, seconds * 1e3);
 }
 
 const renderLoginPage = (container: HTMLDivElement) => {

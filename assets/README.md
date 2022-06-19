@@ -18,10 +18,24 @@
 - [Badge, check icon - Free download on Iconfinder](https://www.iconfinder.com/icons/7122502/badge_check_icon)
 - [Profle, person, profile, user icon - Free download](https://www.iconfinder.com/icons/1055000/profle_person_profile_user_icon)
 - [Crying, emoji, sad icon - Free download on Iconfinder](https://www.iconfinder.com/icons/4830812/crying_emoji_sad_icon)
+- [Card, cards, game, games, videogames icon - Free download](https://www.iconfinder.com/icons/6646634/card_cards_game_games_videogames_icon)
 
 - [Magnifying glass - solid | Font Awesome](https://fontawesome.com/icons/magnifying-glass?s=solid)
 - [Phone - solid | Font Awesome](https://fontawesome.com/icons/phone?s=solid)
 - [Star - solid | Font Awesome](https://fontawesome.com/icons/star?s=regular)
+- [Film - solid | Font Awesome](https://fontawesome.com/icons/film?s=solid)
+- [book - solid | Font Awesome](https://fontawesome.com/icons/book?s=solid)
+- [Newspaper - solid | Font Awesome](https://fontawesome.com/icons/newspaper?s=solid)
+- [Video - solid | Font Awesome](https://fontawesome.com/icons/video?s=solid)
+- [Person Circle-question - solid | Font Awesome](https://fontawesome.com/icons/person-circle-question?s=solid)
+- [Scroll - solid | Font Awesome](https://fontawesome.com/icons/scroll?s=solid)
+- [Volleyball Ball - solid | Font Awesome](https://fontawesome.com/icons/volleyball?s=solid)
+- [Dice - solid | Font Awesome](https://fontawesome.com/icons/dice?s=solid)
+- [Earth americas - solid | Font Awesome](https://fontawesome.com/icons/earth-americas?s=solid)
+- [Clapperboard - solid | Font Awesome](https://fontawesome.com/icons/clapperboard?s=solid)
+- [Baby Carriage - solid | Font Awesome](https://fontawesome.com/icons/baby-carriage?s=solid)
+- [Tower broadcast - solid | Font Awesome](https://fontawesome.com/icons/tower-broadcast?s=solid)
+- [arrow-left - solid | Font Awesome](https://fontawesome.com/icons/arrow-left?s=solid)
 
 ## Fontes tipográficas
 

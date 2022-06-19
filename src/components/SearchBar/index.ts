@@ -1,5 +1,7 @@
-import $ from './../../utils/$';
 import './styles.css';
+
+import { isEmpty } from './../../utils/string_utils';
+import $ from './../../utils/$';
 
 const getLastSearch = () => {
   const params = new URLSearchParams(location.search);
@@ -7,6 +9,18 @@ const getLastSearch = () => {
 
   const input = <HTMLInputElement>$(`input[name='search']`);
   input.value = search ?? '';
+}
+
+const avoidSearchingAnything = () => {
+  const form = <HTMLFormElement>$('#search-bar');
+
+  form.onsubmit = (event: SubmitEvent) => {
+    const { value } = (<HTMLFormElement>event.target).search;
+
+    if (isEmpty(value)) {
+      event.preventDefault();
+    }
+  };
 }
 
 const renderSearchBar = (container: HTMLDivElement) => {
@@ -24,6 +38,7 @@ const renderSearchBar = (container: HTMLDivElement) => {
   container.insertAdjacentHTML('beforeend', htmlContent);
 
   getLastSearch();
+  avoidSearchingAnything();
 }
 
 export default renderSearchBar;

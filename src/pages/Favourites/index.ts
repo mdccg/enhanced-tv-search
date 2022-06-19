@@ -2,6 +2,7 @@ import renderContentNotFoundPanel, {
   showContentNotFoundPanel,
   hideContentNotFoundPanel
 } from './../../components/ContentNotFoundPanel';
+import renderUnfavouriteAllButton from './../../components/UnfavouriteAllButton';
 import renderTVShowCard from './../../components/TVShowCard';
 import renderHeader from './../../components/Header';
 
@@ -10,7 +11,6 @@ import TVShow, { getTVShowById } from './../../models/TVShow';
 import { getFavouritedShows, unfavouriteShow } from './../../utils/favourite_utils';
 import { resizeSearchedVideosArea } from './../../utils/miscellaneous_utils';
 import $ from './../../utils/$';
-import renderUnfavouriteAllButton from '../../components/UnfavouriteAllButton';
 
 export const handleNoFavouritedShows = (message?: string) => {
   const ids = getFavouritedShows();

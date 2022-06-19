@@ -10,12 +10,12 @@ const handleClick = () => {
   audio.src = '/assets/sounds/unfavourited.mp3';
   audio.play();
 
+  const favouritedShows = getFavouritedShows();
   localStorage.removeItem('favouritedShows');
 
   const searchedVideosArea = <HTMLDivElement>$('#searched-videos-area');
   searchedVideosArea.innerHTML = '';
 
-  const favouritedShows = getFavouritedShows();
   let message: string | undefined;
   if (favouritedShows.length === 0) {
     message = `
