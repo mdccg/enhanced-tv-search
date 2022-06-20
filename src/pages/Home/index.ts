@@ -35,6 +35,8 @@ const searchVideos = () => {
     return;
   }
 
+  document.title = search + ' • TV Search';
+
   showLoadingPanel();
 
   const config: AxiosRequestConfig = {

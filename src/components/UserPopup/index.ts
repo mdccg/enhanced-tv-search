@@ -37,8 +37,7 @@ const setUserPopup = () => {
   const app = <HTMLDivElement>$('#app');
 
   onblur = (_) => {
-    // TODO descomentar
-    // hideUserPopup();
+    hideUserPopup();
   };
 
   app.onclick = (event: MouseEvent) => {

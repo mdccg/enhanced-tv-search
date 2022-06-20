@@ -10,7 +10,7 @@ const initializeCarousel = () => {
   const wallpaper = <HTMLDivElement>$('#wallpaper');
   const wallpaperHeight = 768;
   const spriteHeight = 4608;
-  const seconds = 3;
+  const seconds = 5;
   
   let counter = 1;
 
@@ -35,6 +35,9 @@ const renderLoginPage = (container: HTMLDivElement) => {
     </main>
     <div id="gradient"></div>
     <div id="wallpaper"></div>
+    <footer>
+      <a href="terms-of-use.html">Termos de uso</a>
+    </footer>
   `;
 
   container.innerHTML = htmlContent;

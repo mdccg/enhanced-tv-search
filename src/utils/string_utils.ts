@@ -1,4 +1,8 @@
-import { types as jsonTypes, genres as jsonGenres } from './../translations/dict.json';
+import {
+  types as jsonTypes,
+  genres as jsonGenres,
+  languages as jsonLanguages
+} from './../translations/dict.json';
 
 export const isEmpty = (string: string | null) => {
   const regExp = new RegExp(/^(\s+)?$/);
@@ -30,3 +34,6 @@ export const getFormattedGenres = (genres: string[]): string => {
   
   return formattedGenres;
 }
+
+export const getTranslatedLanguage = (language: string) =>
+  (<any>jsonLanguages)[language] ?? language;

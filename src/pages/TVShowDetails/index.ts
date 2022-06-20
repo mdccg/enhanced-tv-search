@@ -13,14 +13,18 @@ import {
   favouritedIcon,
   unFavouritedIcon
 } from './../../utils/favourite_utils';
-import { getTranslatedType, getFormattedGenres, isEmpty } from './../../utils/string_utils';
+import {
+  isEmpty,
+  getTranslatedType,
+  getFormattedGenres,
+  getTranslatedLanguage
+} from './../../utils/string_utils';
 import { parseStringDate } from './../../utils/date_utils';
 import $ from './../../utils/$';
 
 import api from './../../services/api';
 
 const handleClickBackButton = () => {
-  console.log();
   history.back();
 }
 
@@ -75,8 +79,11 @@ const renderTVShowDetails = async (container: HTMLDivElement) => {
 
   const { id, name, type, language, genres, isRunning, premieredDate, imageUrl, channel } = tvShow;
 
+  document.title = name + ' • TV Search';
+
   const translatedType = getTranslatedType(type);
   const formattedGenres = getFormattedGenres(genres);
+  const translatedLanguage = await getTranslatedLanguage(language);
 
   let favourited = isFavourited(id);
 
@@ -117,7 +124,7 @@ const renderTVShowDetails = async (container: HTMLDivElement) => {
 
         <div class="data">
           <img src="/assets/icons/earth-americas-solid.svg" alt="Idioma" />
-          <span>${language}</span>
+          <span>${translatedLanguage}</span>
         </div>
 
         <div class="data">
@@ -142,23 +149,22 @@ const renderTVShowDetails = async (container: HTMLDivElement) => {
 
   const backButton = <HTMLButtonElement>$('#back-button');
   const shiningStar = <HTMLDivElement>$('#favourite-icon');
-  
+  shiningStar.style.fill = favourited ? 'var(--sun-flower)' : 'var(--fuel-town)';
+
   backButton.onclick = () => handleClickBackButton();
   shiningStar.onclick = () => {
     favourited = !favourited;
     let audio;
     
-    const favouriteIcon = <HTMLDivElement>$('#favourite-icon');
-
     if (favourited) {
       favouriteShow(id);
-      favouriteIcon.innerHTML = favouritedIcon;
-      favouriteIcon.style.fill = 'var(--sun-flower)';
+      shiningStar.innerHTML = favouritedIcon;
+      shiningStar.style.fill = 'var(--sun-flower)';
       audio = new Audio('/assets/sounds/favourited.mp3');
     } else {
       unfavouriteShow(id);
-      favouriteIcon.innerHTML = unFavouritedIcon;
-      favouriteIcon.style.fill = 'var(--fuel-town)';
+      shiningStar.innerHTML = unFavouritedIcon;
+      shiningStar.style.fill = 'var(--fuel-town)';
       audio = new Audio('/assets/sounds/unfavourited.mp3');
     }
     

@@ -86,8 +86,6 @@
   display: flex;
 
   cursor: pointer;
-  
-  fill: var(--sun-flower);
 }
 
 #tv-show #tv-show-details #name #favourite-icon svg {
