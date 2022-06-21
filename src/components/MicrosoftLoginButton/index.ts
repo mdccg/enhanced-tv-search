@@ -1,7 +1,9 @@
+import toast from './../Toast';
 import firebaseApp from './../../config/firebase';
+import { getErrorMessages } from './../../utils/auth_utils';
 import $ from './../../utils/$';
 
-import { getAuth, signInWithPopup, OAuthProvider, OAuthCredential } from "firebase/auth";
+import { getAuth, signInWithPopup, OAuthProvider, OAuthCredential } from 'firebase/auth';
 
 const handleClick = () => {
   const auth = getAuth(firebaseApp);
@@ -23,14 +25,8 @@ const handleClick = () => {
       
     }).catch((error) => {
       const errorCode = error.code;
-      const errorMessage = error.message;
-      const email = error.customData.email;
-      const credential = OAuthProvider.credentialFromError(error);
 
-      console.error(errorCode);
-      console.error(errorMessage);
-      console.error(email);
-      console.error(credential);
+      toast.error(getErrorMessages(errorCode));
     });
 }
 

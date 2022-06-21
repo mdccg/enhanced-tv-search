@@ -2,12 +2,7 @@
 
 ## _To-do list_
 
-- [X] Fazer a tela dos detalhes de um TV show
-- [X] Favoritar um tv show pela tela de detalhes
-- [X] Botão voltar na tela de detalhes
-- [X] Corrigir _flickering_ na tela de login com sprites
-- [X] Impedir o usuário de pesquisar com texto vazio
-- [X] Traduzir o idioma de cada TV show 
-- [X] Fazer o rodapé
-- [X] Conferir todos os `TODO`
-- [ ] Tratar exceção do e-mail duplicado em provedores diferentes
+- [X] Esconder gêneros quando não houver nenhum na tela dos TV shows
+- [X] Tratar exceção do e-mail duplicado em provedores diferentes
+- [X] Corrigir o carrossel de planos de fundo substituindo &lt;div&gt; por &lt;img&gt;
+- [X] Verificar se é possível remover o `justify-content: space-between` do `#searched-videos-area`

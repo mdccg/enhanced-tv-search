@@ -57,17 +57,19 @@ footer a {
   z-index: 2;
 }
 
-#wallpaper {
-  background-image: url('/assets/images/wallpapers-sprite.png');
-  
-  background-position-x: 0;
-  background-position-y: 4608px;
+#wallpapers {
+  user-select: none;
+}
 
-  transition: background-position-y 0.75s cubic-bezier(0.215, 0.610, 0.355, 1);
+.wallpaper {
+  object-fit: cover;
+
+  transition: opacity 0.75s;
+
   z-index: 1;
 }
 
-#wallpaper, #gradient {
+.wallpaper, #gradient {
   position: absolute;
   left: 0;
   top: 0;
@@ -127,8 +129,6 @@ footer a {
   font-size: 125%;
   font-weight: 500;
 }
-
-
 
 @media only screen and (max-width: 768px) {
   #gradient {

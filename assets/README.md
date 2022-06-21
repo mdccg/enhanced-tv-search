@@ -36,6 +36,7 @@
 - [Baby Carriage - solid | Font Awesome](https://fontawesome.com/icons/baby-carriage?s=solid)
 - [Tower broadcast - solid | Font Awesome](https://fontawesome.com/icons/tower-broadcast?s=solid)
 - [arrow-left - solid | Font Awesome](https://fontawesome.com/icons/arrow-left?s=solid)
+- [Triangle exclamation - solid | Font Awesome](https://fontawesome.com/icons/triangle-exclamation?s=solid)
 
 ## Fontes tipográficas
 
@@ -49,5 +50,7 @@
 
 ## Miscelâneas
 
+- [Smooth Shadow](https://shadows.brumm.af/)
 - [CSS Gradient — Generator, Maker, and Background](https://cssgradient.io/)
 - [loading.io - Your SVG + GIF + PNG Ajax Loading Icons and Animation Generator](https://loading.io/)
+- [How to Create a Realistic Motion Blur with CSS Transitions | CSS-Tricks - CSS-Tricks](https://css-tricks.com/how-to-create-a-realistic-motion-blur-with-css-transitions/)

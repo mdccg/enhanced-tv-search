@@ -112,10 +112,12 @@ const renderTVShowDetails = async (container: HTMLDivElement) => {
           </div>
         </div>
         
-        <div class="data">
-          <img src="/assets/icons/suits.svg" alt="Gêneros" />
-          <span>${formattedGenres}</span>
-        </div>
+        ${genres.length > 0 ? `
+          <div class="data">
+            <img src="/assets/icons/suits.svg" alt="Gêneros" />
+            <span>${formattedGenres}</span>
+          </div>
+        ` : ''}
 
         <div class="data">
           <img id="type-icon" src="/assets/icons/video-solid.svg" alt="Categoria" />

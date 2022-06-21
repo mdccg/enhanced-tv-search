@@ -6,26 +6,54 @@ import renderMicrosoftLoginButton from './../../components/MicrosoftLoginButton'
 
 import $ from './../../utils/$';
 
-const initializeCarousel = () => {
-  const wallpaper = <HTMLDivElement>$('#wallpaper');
-  const wallpaperHeight = 768;
-  const spriteHeight = 4608;
-  const seconds = 5;
-  
-  let counter = 1;
+const preloadWallpapers = (totalWallpapers: number) => {
+  const head = <HTMLHeadElement>$('head');
 
-  setInterval(() => {
-    wallpaper.style.backgroundPositionY = `
-      ${spriteHeight - (wallpaperHeight * counter)}px
+  for (let counter = 1; counter <= totalWallpapers; ++counter) {
+    const htmlContent = `
+      <link rel="preload" as="image" href="/assets/images/wallpaper-${counter}.png" />
     `;
 
+    head.insertAdjacentHTML('beforeend', htmlContent);
+  }
+}
+
+const setWallpapers = (totalWallpapers: number) => {
+  const wallpapers = <HTMLDivElement>$('#wallpapers');
+  
+  for (let counter = totalWallpapers; counter >= 1; --counter) {
+    const htmlContent = `
+      <img
+        src="/assets/images/wallpaper-${counter}.png"
+        alt="Plano de fundo"
+        class="wallpaper" />
+    `;
+
+    wallpapers.insertAdjacentHTML('beforeend', htmlContent);
+  }
+}
+
+const initializeCarousel = (seconds = 3) => {
+  const wallpaperArray = <NodeListOf<HTMLImageElement>>document.querySelectorAll('.wallpaper');
+  let counter = 0;
+  
+  setInterval(() => {
+    const wallpaper = <HTMLImageElement>wallpaperArray[wallpaperArray.length - 1 - counter];
+    wallpaperArray.forEach((wallpaper) => wallpaper.style.opacity = '0');
+    wallpaper.style.opacity = '1';
+    
     ++counter;
-  }, seconds * 1e3);
+
+    if (counter === wallpaperArray.length) {
+      counter = 0;
+    }
+  }, seconds * 1000);
 }
 
 const renderLoginPage = (container: HTMLDivElement) => {
   const htmlContent = `
     <main class="page" id="login">
+      <div id="toast-area"></div>
       <h1>TV Search</h1>
       <h2>
         Com o TV Search, você pode pesquisar filmes, séries, k-dramas, animes e muito mais 
@@ -34,7 +62,7 @@ const renderLoginPage = (container: HTMLDivElement) => {
       <div id="login-buttons"></div>
     </main>
     <div id="gradient"></div>
-    <div id="wallpaper"></div>
+    <div id="wallpapers"></div>
     <footer>
       <a href="terms-of-use.html">Termos de uso</a>
     </footer>
@@ -48,6 +76,10 @@ const renderLoginPage = (container: HTMLDivElement) => {
   renderGithubLoginButton(loginButtons);
   renderMicrosoftLoginButton(loginButtons);
 
+  const totalWallpapers = 6;
+  
+  preloadWallpapers(totalWallpapers);
+  setWallpapers(totalWallpapers);
   initializeCarousel();
 }
 

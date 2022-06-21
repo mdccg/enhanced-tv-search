@@ -1,9 +1,8 @@
 .tv-show-card-area {
-  margin-top: 32px;
+  margin: 24px;
   
   justify-content: center;
   display: flex;
-  flex: 20%;
 }
 
 a.tv-show-card {
@@ -101,7 +100,7 @@ a.tv-show-card {
   }
 
   .tv-show-card-area {
-    margin-right: 48px;
+    margin-right: 24px;
   }
 
   .tv-show-card-area:last-child {

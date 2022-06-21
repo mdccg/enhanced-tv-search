@@ -55,7 +55,7 @@ const renderTVShowCard = (
   tvShow: TVShow,
   handleNoFavouritedShows?: () => void
 ) => {
-  const { name, type, genres, imageUrl } = tvShow;
+  const { name, type, genres, thumbnailUrl } = tvShow;
   
   const id = `${tvShow.id}`;
   const thisId = `tv-show-card-${id}`;
@@ -70,8 +70,8 @@ const renderTVShowCard = (
     <div class="tv-show-card-area">
       <a class="tv-show-card" id="${thisId}" href="tv-show.html?id=${id}">
       
-        ${imageUrl ? `
-          <img src="${imageUrl}" alt="Capa de ${name}" />
+        ${thumbnailUrl ? `
+          <img src="${thumbnailUrl}" alt="Capa de ${name}" />
         ` : `
           <div class="image-not-found">
             <svg class="television-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M19,6H14.41l2.3-2.29a1,1,0,1,0-1.42-1.42L12,5.59,8.71,2.29A1,1,0,1,0,7.29,3.71L9.59,6H5A3,3,0,0,0,2,9V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V9A3,3,0,0,0,19,6ZM16,16a2,2,0,0,1-2,2H6a2,2,0,0,1-2-2V10A2,2,0,0,1,6,8h8a2,2,0,0,1,2,2Zm3,3a1,1,0,1,1,1-1A1,1,0,0,1,19,19Zm0-4a1,1,0,1,1,1-1A1,1,0,0,1,19,15Zm0-4a1,1,0,1,1,1-1A1,1,0,0,1,19,11Z" /></svg>
