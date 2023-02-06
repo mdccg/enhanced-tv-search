@@ -54,3 +54,5 @@
 - [CSS Gradient — Generator, Maker, and Background](https://cssgradient.io/)
 - [loading.io - Your SVG + GIF + PNG Ajax Loading Icons and Animation Generator](https://loading.io/)
 - [How to Create a Realistic Motion Blur with CSS Transitions | CSS-Tricks - CSS-Tricks](https://css-tricks.com/how-to-create-a-realistic-motion-blur-with-css-transitions/)
+- [Gear Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/gear?s=solid&f=classic)
+- [Nine Squares Vector SVG Icon (2) - SVG Repo](https://www.svgrepo.com/svg/149234/nine-squares)

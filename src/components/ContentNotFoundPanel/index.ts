@@ -13,6 +13,7 @@ export const showContentNotFoundPanel = (message?: string, happy?: boolean) => {
 
   if (happy) {
     const imgContentNotFoundPanel = <HTMLImageElement>$('#content-not-found-panel > img');
+    imgContentNotFoundPanel.alt = 'Feliz';
     imgContentNotFoundPanel.src = '/assets/icons/happy.svg';
   }
 }
